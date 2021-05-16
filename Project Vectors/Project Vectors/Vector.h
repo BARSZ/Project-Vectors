@@ -8,6 +8,9 @@ public:
 	Vector(const Point&, const Point&);
 	double CalculateLenghtVector();
 	bool IsNullVector();
+	Vector CalculateDirection();
+	bool AreParallel(Vector&);
+	bool ArePerpendicular(Vector&);
 	//virtual ~Vector();
 	Vector& operator=(const Vector&);
 private:

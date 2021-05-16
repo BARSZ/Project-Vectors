@@ -6,7 +6,8 @@ int main()
     std::cout << "Hello World!\n";
     /*Vector v(1, 2, 3);
     cout << v.CalculateLenghtVector();*/
-    Vector v(0, 0, 0);
+    //NULL VECTOR
+    /*Vector v(0, 0, 0);
     if (v.IsNullVector())
     {
         cout << "null";
@@ -14,6 +15,19 @@ int main()
     else
     {
         cout << "Not null";
-    }
+    }*/
+    /*Vector v(1, 2, 3);
+    Vector v2 = v.CalculateDirection();
+    cout << v2.CalculateLenghtVector();*/
+    /*Vector v1(-9, 18, 0);
+    Vector v2(-3, 6, 0);
+    if (v1.AreParallel(v2))
+    {
+        cout << "Male perpoendikulqrni sa tva e mn qko";
+    }*/
+    /*if (v1.ArePerpendicular(v2))
+    {
+        cout << "Male perpoendikulqrni sa tva e mn qko";
+    }*/
     return 0;
 }
