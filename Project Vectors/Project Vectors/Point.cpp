@@ -1,27 +1,26 @@
 #include "Point.h"
-Point::Point(double x, double y, double z)
+Point::Point(double x, double y, double z) : x(x), y(y), z(z)
 {
 
 }
 Point::Point(const Point& rhs)
 {
+	this->x = rhs.x;
+	this->y = rhs.y;
+	this->z = rhs.z;
+}
 
-}
-Point::~Point()
+double Point::getX() const
 {
-
+	return x;
 }
-double Point::getX(const Point& p) const
+double Point::getY() const
 {
-	return p.x;
+	return y;
 }
-double Point::getY(const Point& p) const
+double Point::getZ() const
 {
-	return p.y;
-}
-double Point::getZ(const Point& p) const
-{
-	return p.z;
+	return z;
 }
 Point& Point::operator=(const Point& rhs)
 {

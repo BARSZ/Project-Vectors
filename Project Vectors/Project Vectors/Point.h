@@ -1,17 +1,18 @@
-#pragma once
+#pragma
 #include <iostream>
-class Point
+#include "Element.h"
+class Point 
 {
-private:
+protected:
 	double x;
 	double y;
 	double z;
 public:
-	Point(double, double, double);
+	Point(double = 0, double = 0, double = 0);
 	Point(const Point&);
-	~Point();
+	//~Point();
 	Point& operator=(const Point&);
-	double getX(const Point&) const;
-	double getY(const Point&) const;
-	double getZ(const Point&) const;
+	double getX() const;
+	double getY() const;
+	double getZ() const;
 };
