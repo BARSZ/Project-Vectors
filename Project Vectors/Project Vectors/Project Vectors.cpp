@@ -29,5 +29,8 @@ int main()
     {
         cout << "Male perpoendikulqrni sa tva e mn qko";
     }*/
+    Vector v1(2, 4, 6);
+    Vector v2(1, 2, 3);
+    cout << (v1 * v2).CalculateLenghtVector();
     return 0;
 }

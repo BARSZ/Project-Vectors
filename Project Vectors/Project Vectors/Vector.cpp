@@ -69,3 +69,32 @@ bool Vector::ArePerpendicular(Vector& v2)
 	}
 	return arePerpendicular;
 }
+Vector operator+(Vector v1, Vector v2)
+{
+	Vector newV(v1.getX() + v2.getX(), v1.getY() + v2.getY(), v1.getZ() + v2.getZ());
+	return newV;
+}
+Vector operator-(Vector v1, Vector v2)
+{
+	Vector newV(v1.getX() - v2.getX(), v1.getY() - v2.getY(), v1.getZ() - v2.getZ());
+	return newV;
+}
+Vector operator*(Vector v1, int num)
+{
+	Vector newV(v1.getX() * num, v1.getY() * num, v1.getZ() * num);
+	return newV;
+}
+Vector operator*(Vector v1, Vector v2)
+{
+	Vector newV(v1.getX() * v2.getX(), v1.getY() * v2.getY(), v1.getZ() * v2.getZ());
+	return newV;
+}
+Vector Vector::operator()(Vector v1, Vector v2)
+{
+	double i = (this->getX() * v1.getX()) * v2.getX();
+	double j = (this->getY() * v1.getY()) * v2.getY();
+	double k = (this->getZ() * v1.getZ()) * v2.getZ();
+
+	Vector newV(i, j, k);
+	return newV;
+}

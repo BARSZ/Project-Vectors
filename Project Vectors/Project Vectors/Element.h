@@ -2,7 +2,7 @@
 class Element
 {
 public:
-	Element();
+	//Element();
 	//virtual ~Element();
 private:
 };

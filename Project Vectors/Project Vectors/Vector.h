@@ -12,7 +12,14 @@ public:
 	bool AreParallel(Vector&);
 	bool ArePerpendicular(Vector&);
 	//virtual ~Vector();
-	Vector& operator=(const Vector&);
+	//Vector& operator=(const Vector&);
+	Vector operator()(Vector, Vector);
 private:
 };
+Vector operator+(Vector, Vector);
+Vector operator-(Vector, Vector);
+Vector operator*(Vector, int);
+Vector operator*(Vector, Vector);
+
+
 

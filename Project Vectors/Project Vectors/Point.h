@@ -1,7 +1,7 @@
 #pragma
 #include <iostream>
 #include "Element.h"
-class Point 
+class Point
 {
 protected:
 	double x;
@@ -16,3 +16,4 @@ public:
 	double getY() const;
 	double getZ() const;
 };
+bool operator==(Point, Point);
