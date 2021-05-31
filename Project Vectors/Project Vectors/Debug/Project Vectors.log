@@ -1,10 +1,4 @@
-﻿  Line.cpp
-  Point.cpp
-  Project Vectors.cpp
-C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Project Vectors.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Segment.cpp
-  Triangle.cpp
-  Vector.cpp
-  Generating Code...
-C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.cpp(34): warning C4715: 'Vector::CalculateDirection': not all control paths return a value
+﻿  Project Vectors.cpp
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Project Vectors.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Project Vectors.vcxproj -> C:\Assignments\OOP\Project-Vectors\Project Vectors\Debug\Project Vectors.exe

@@ -18,19 +18,28 @@ double Vector::CalculateLenghtVector()
 }
 Vector Vector::CalculateDirection()
 {
-	if (this->CalculateLenghtVector() == 0)
+	try
 	{
-		//Exception
-	}
-	else
-	{
-		double i = x / sqrt(x * x + y * y + z * z);
-		double j = y / sqrt(x * x + y * y + z * z);
-		double k = z / sqrt(x * x + y * y + z * z);
+		if (this->CalculateLenghtVector() == 0)
+		{
+			throw VectorLengthException();
+		}
+		else
+		{
+			double i = x / sqrt(x * x + y * y + z * z);
+			double j = y / sqrt(x * x + y * y + z * z);
+			double k = z / sqrt(x * x + y * y + z * z);
 
-		Vector v1(i, j, k);
-		return v1;
+			Vector v1(i, j, k);
+			return v1;
+		}
 	}
+	catch (VectorLengthException& ex)
+	{
+		cout << "Vector Lenght Exception thrown" << endl;
+		cout << "Length is 0" << endl;
+	}
+	
 }
 bool Vector::IsNullVector()
 {
@@ -49,10 +58,19 @@ bool Vector::AreParallel(Vector& v2)
 	{
 		areParallel = true;
 	}
-	if (this->CalculateLenghtVector() == 0 || v2.CalculateLenghtVector() == 0)
+	try 
 	{
-		//Exception
+		if (this->CalculateLenghtVector() == 0 || v2.CalculateLenghtVector() == 0)
+		{
+			throw VectorLengthException();
+		}
 	}
+	catch (VectorLengthException& ex)
+	{
+		cout << "Vector Lenght Exception thrown" << endl;
+		cout << "Length is 0" << endl;
+	}
+	
 	return areParallel;
 }
 bool Vector::ArePerpendicular(Vector& v2)
@@ -63,10 +81,19 @@ bool Vector::ArePerpendicular(Vector& v2)
 	{
 		arePerpendicular = true;
 	}
-	if (this->IsNullVector() || v2.IsNullVector())
+	try 
 	{
-		//Exception
+		if (this->IsNullVector() || v2.IsNullVector())
+		{
+			throw VectorLengthException();
+		}
 	}
+	catch(VectorLengthException& ex)
+	{
+		cout << "Vector Lenght Exception thrown" << endl;
+		cout << "Error NULL vector" << endl;
+	}
+	
 	return arePerpendicular;
 }
 Vector operator+(Vector v1, Vector v2)
