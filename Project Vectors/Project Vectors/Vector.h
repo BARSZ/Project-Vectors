@@ -14,13 +14,14 @@ public:
 	bool AreParallel(Vector&);
 	bool ArePerpendicular(Vector&);
 	//Vector& operator=(const Vector&);
+	Vector operator^(Vector) const;
 	Vector operator()(Vector, Vector);
 private:
 };
 Vector operator+(Vector, Vector);
 Vector operator-(Vector, Vector);
 Vector operator*(Vector, int);
-Vector operator*(Vector, Vector);
+double operator*(Vector, Vector);
 
 
 
