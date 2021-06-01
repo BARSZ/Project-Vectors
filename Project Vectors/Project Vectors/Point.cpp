@@ -27,3 +27,17 @@ bool operator==(Point p1, Point p2)
 	}
 	return match;
 }
+void Point::print()
+{
+	std::cout << "Point: " << x << " " << y << " " << z << "\n";
+}
+char compareDouble(double a, double b)
+{
+	const float precision = 0.0000000001;
+	if (std::abs(a - b) < precision)
+	{
+		return 0;
+	}
+	else if (a > b) return 1;
+	else return -1;
+}

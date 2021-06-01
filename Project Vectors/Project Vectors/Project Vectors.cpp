@@ -2,6 +2,41 @@
 #include "Vector.h";
 #include "Line.h";
 using namespace std;
+void PrintVectorOperations()
+{
+	cout << "Please choose operation: " << endl;
+	cout << "1 - Find Vector length" << endl;
+	cout << "2 - Find Vector direction" << endl;
+	cout << "3 - Null Vector" << endl;
+	cout << "4 - Are two vectors parallel?" << endl;
+	cout << "5 - Are two vectors perpendicular?" << endl;
+	cout << "6 - Add two vectors" << endl;
+	cout << "7 - Substract two vectors" << endl;
+	cout << "8 - Multiply a vector by a number" << endl;
+	cout << "9 - Multiply a vector by a vector" << endl;
+	cout << "10 - Vektorno proizvedenie" << endl;
+	cout << "11 - Multiply three vectors" << endl;
+}
+void PrintLineOperations()
+{
+	cout << "Please choose operation: " << endl;
+	cout << "1 - Find Line direction" << endl;
+	cout << "2 - Find NORM Vector" << endl;
+	cout << "3 - Find angle between two Lines" << endl;
+	cout << "4 - Is Point on Line?" << endl;
+	cout << "5 - Is this Line parrallel to another Line?" << endl;
+	cout << "6 - Two lines match?" << endl;
+	cout << "7 - Is this Line going through another Line?" << endl;
+	cout << "8 - Dali edna prava e krustosana s druga prava?" << endl;
+	cout << "9 - Is this Line perpendicular to another Line?" << endl;
+}
+void PrintNewVector(Vector v2)
+{
+	cout << "New vector" << endl;
+	cout << "X: " << v2.getX() << endl;
+	cout << "Y: " << v2.getY() << endl;
+	cout << "Z: " << v2.getZ() << endl;
+}
 int main()
 {
 	int geometricObject;
@@ -40,18 +75,7 @@ int main()
 				cout << "Z: ";
 				cin >> z;
 				Vector v1(x, y, z);
-				cout << "Please choose operation: " << endl;
-				cout << "1 - Find Vector length" << endl;
-				cout << "2 - Find Vector direction" << endl;
-				cout << "3 - Null Vector" << endl;
-				cout << "4 - Are two vectors parallel?" << endl;
-				cout << "5 - Are two vectors perpendicular?" << endl;
-				cout << "6 - Add two vectors" << endl;
-				cout << "7 - Substract two vectors" << endl;
-				cout << "8 - Multiply a vector by a number" << endl;
-				cout << "9 - Multiply a vector by a vector" << endl;
-				cout << "10 - Vektorno proizvedenie" << endl;
-				cout << "11 - Multiply three vectors" << endl;
+				PrintVectorOperations();
 				cin >> operation;
 
 				if (operation == 1)
@@ -61,10 +85,7 @@ int main()
 				else if (operation == 2)
 				{
 					Vector v2 = v1.CalculateDirection();
-					cout << "New vector" << endl;
-					cout << "X: " << v2.getX() << endl;
-					cout << "Y: " << v2.getY() << endl;
-					cout << "Z: " << v2.getZ() << endl;
+					PrintNewVector(v2);
 				}
 				else if (operation == 3)
 				{
@@ -133,10 +154,7 @@ int main()
 					Vector v2(x, y, z);
 					Vector v3 = v1 + v2;
 
-					cout << "New vector" << endl;
-					cout << "X: " << v3.getX() << endl;
-					cout << "Y: " << v3.getY() << endl;
-					cout << "Z: " << v3.getZ() << endl;
+					PrintNewVector(v3);
 				}
 				else if (operation == 7)
 				{
@@ -152,10 +170,7 @@ int main()
 					Vector v2(x, y, z);
 					Vector v3 = v1 - v2;
 
-					cout << "New vector" << endl;
-					cout << "X: " << v3.getX() << endl;
-					cout << "Y: " << v3.getY() << endl;
-					cout << "Z: " << v3.getZ() << endl;
+					PrintNewVector(v3);
 				}
 				else if (operation == 8)
 				{
@@ -164,10 +179,7 @@ int main()
 					cout << "Number: ";
 					cin >> num;
 					Vector v2 = v1 * num;
-					cout << "New vector" << endl;
-					cout << "X: " << v2.getX() << endl;
-					cout << "Y: " << v2.getY() << endl;
-					cout << "Z: " << v2.getZ() << endl;
+					PrintNewVector(v2);
 				}
 				else if (operation == 9)
 				{
@@ -197,10 +209,7 @@ int main()
 					cin >> z;
 					Vector v2(x, y, z);
 					Vector v3 = v1 ^ v2;
-					cout << "New vector" << endl;
-					cout << "X: " << v3.getX() << endl;
-					cout << "Y: " << v3.getY() << endl;
-					cout << "Z: " << v3.getZ() << endl;
+					PrintNewVector(v3);
 				}
 				else if (operation == 11)
 				{
@@ -225,10 +234,7 @@ int main()
 					cin >> z;
 					Vector v3(x, y, z);
 					Vector v4 = v1(v2, v3);
-					cout << "New vector" << endl;
-					cout << "X: " << v4.getX() << endl;
-					cout << "Y: " << v4.getY() << endl;
-					cout << "Z: " << v4.getZ() << endl;
+					PrintNewVector(v4);
 				}
 				else
 				{
@@ -270,32 +276,19 @@ int main()
 				Vector v(x, y, z);
 				Line l(p, v);
 
-				cout << "Please choose operation: " << endl;
-				cout << "1 - Find Line direction" << endl;
-				cout << "2 - Find NORM Vector" << endl;
-				cout << "3 - Find angle between two Lines" << endl;
-				cout << "4 - Is Point on Line?" << endl;
-				cout << "5 - Is this Line parrallel to another Line?" << endl;
-				cout << "6 - Two lines match?" << endl;
-				cout << "7 - Is this Line going through another Line?" << endl;
-				cout << "8 - Dali edna prava e krustosana s druga prava?" << endl;
-				cout << "9 - Is this Line perpendicular to another Line?" << endl;
+				PrintLineOperations();
 				cin >> operation;
 				if (operation == 1)
 				{
 					Vector v2 = l.getSlope();
-					cout << "Usporeden Vector" << endl;
-					cout << "X: " << v2.getX() << endl;
-					cout << "Y: " << v2.getY() << endl;
-					cout << "Z: " << v2.getZ() << endl;
+					cout << "PARALLEL VECTOR" << endl;
+					PrintNewVector(v2);
 				}
 				else if (operation == 2)
 				{
 					Vector v2 = l.getNormVect();
-					cout << "Normal Vector" << endl;
-					cout << "X: " << v2.getX() << endl;
-					cout << "Y: " << v2.getY() << endl;
-					cout << "Z: " << v2.getZ() << endl;
+					cout << "NORMAL VECTOR" << endl;
+					PrintNewVector(v2);
 				}
 				else if (operation == 3)
 				{

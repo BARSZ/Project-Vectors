@@ -3,12 +3,23 @@
 class Triangle : public Point
 {
 public:
-	Triangle(const Point&, const Point&, const Point&);
-	virtual ~Triangle();
-	Triangle& operator=(const Triangle&);
-private:
-	Point A;
-	Point B;
-	Point C;
-};
+	Triangle(Point A, Point B, Point C);
+	void print();
+	bool if2SidesEqual();
+	bool if3SidesEqual();
+	bool if90();
+	bool ifLess90();
+	bool ifGreater90();
+	double area();
+	Point medicenter();
+	bool checkPlain(Point a);
+	unsigned char positioned(Point a);
 
+private:
+	Point A, B, C;
+	// The triangle sides are calculated and sorted by size in A1, A2, A3
+	double A1, A2, A3;
+};
+bool operator < (Point a, Triangle t);
+bool operator > (Point a, Triangle t);
+bool operator == (Point a, Triangle t);

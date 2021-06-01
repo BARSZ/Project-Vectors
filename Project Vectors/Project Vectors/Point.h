@@ -8,5 +8,7 @@ public:
 	Point(const Point&);
 	~Point() = default;
 	Point& operator=(const Point&);
+	void print();
 };
+char compareDouble(double a, double b);
 bool operator==(Point, Point);
