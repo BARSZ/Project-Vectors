@@ -142,6 +142,7 @@
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="PrintFunctions.cpp" />
     <ClCompile Include="Project Vectors.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Triangle.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Element.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="PrintFunctions.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector.h" />
