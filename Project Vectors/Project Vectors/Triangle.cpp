@@ -1,8 +1,8 @@
 #include "Triangle.h"
-#include "Triangle.h"
 #include <iostream>
 Triangle::Triangle(Point A, Point B, Point C)
 {
+	
 	if (A == B)
 	{
 		std::cout << "ERROR A = B: ";
@@ -26,9 +26,9 @@ Triangle::Triangle(Point A, Point B, Point C)
 	this->B = B;
 	this->C = C;
 
-	A.print();
+	/*A.print();
 	B.print();
-	C.print();
+	C.print();*/
 
 	double a1, a2, a3;
 
@@ -119,6 +119,12 @@ bool Triangle::ifLess90()
 bool Triangle::ifGreater90()
 {
 	return ((A1 * A1 + A2 * A2) < A3 * A3);
+}
+
+double Triangle::getPerimeter()
+{
+	double perimeter = A1 + A2 + A3;
+	return perimeter;
 }
 
 double Triangle::area()

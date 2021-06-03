@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "PrintFunctions.h"
-#include "Vector.h";
+#include "EqualPointException.h"
+#include "Triangle.h";
 #include "Line.h";
 using namespace std;
 
@@ -212,7 +213,6 @@ int main()
 		{
 			while (chooseOperation == 'y')
 			{
-				//int initialize;
 				double x;
 				double y;
 				double z;
@@ -476,7 +476,108 @@ int main()
 		//Triangle
 		else if (geometricObject == 5)
 		{
+			while (chooseOperation == 'y')
+			{
+				int x;
+				int y;
+				int z;
+				int operation;
 
+				cout << "Enter first Point: " << endl;
+				cout << "X: ";
+				cin >> x;
+				cout << "Y: ";
+				cin >> y;
+				cout << "Z: ";
+				cin >> z;
+
+				Point p1(x, y, z);
+
+				cout << "Enter second Point: " << endl;
+				cout << "X: ";
+				cin >> x;
+				cout << "Y: ";
+				cin >> y;
+				cout << "Z: ";
+				cin >> z;
+
+				Point p2(x, y, z);
+
+				cout << "Enter third Point: " << endl;
+				cout << "X: ";
+				cin >> x;
+				cout << "Y: ";
+				cin >> y;
+				cout << "Z: ";
+				cin >> z;
+
+				Point p3(x, y, z);
+				Triangle tr(p1, p2, p3);
+				PrintTriangleOperations();
+				cin >> operation;
+
+				if (operation == 1)
+				{
+					if (tr.if2SidesEqual())
+					{
+						cout << "Triangle has 2 equal sides" << endl;
+					}
+					else if (tr.if3SidesEqual())
+					{
+						cout << "Triangle has 3 equal sides" << endl;
+					}
+					else if (tr.if90())
+					{
+						cout << "Triangle is pravougulen" << endl;
+					}
+					else if (tr.ifLess90())
+					{
+						cout << "Triangle is ostrougulen" << endl;
+					}
+					else if (tr.ifGreater90())
+					{
+						cout << "Triangle is tupougulen" << endl;
+					}
+					else
+					{
+						cout << "Triangle is not from this Earth" << endl;
+					}
+				}
+				else if (operation == 2)
+				{
+					cout << "Area of triangle is: " << tr.area() << endl;
+				}
+				else if (operation == 3)
+				{
+					cout << "Perimeter of triangle is: " << tr.getPerimeter() << endl;
+				}
+				else if (operation == 4)
+				{
+					Point pFromMedi = tr.medicenter();
+					cout << "Result is Point: " << endl;
+					cout << "X: " << pFromMedi.getX() << endl;
+					cout << "Y: " << pFromMedi.getX() << endl;
+					cout << "Z: " << pFromMedi.getX() << endl;
+				}
+				else if (operation == 5)
+				{
+					
+				}
+				else if (operation == 6)
+				{
+
+				}
+				else if (operation == 7)
+				{
+
+				}
+				else 
+				{
+					cout << "Invalid operation number!";
+				}
+				cout << "Do you want to enter another operation (y/n)? " << endl;
+				cin >> chooseOperation;
+			}
 		}
 		else
 		{

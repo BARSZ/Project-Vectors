@@ -43,3 +43,14 @@ void PrintNewVector(Vector v2)
 	cout << "Y: " << v2.getY() << endl;
 	cout << "Z: " << v2.getZ() << endl;
 }
+void PrintTriangleOperations()
+{
+	cout << "Please choose operation: " << endl;
+	cout << "1 - Find type of triangle " << endl;
+	cout << "2 - Find area of triangle" << endl;
+	cout << "3 - Find perimeter of triangle" << endl;
+	cout << "4 - Find medicenter of triangle" << endl;
+	cout << "5 - Find if a Point is in the Triangle" << endl;
+	cout << "6 - Find if a Point is outside of the Triangle but in the same ravnina" << endl;
+	cout << "7 - Find if a Point is positioned on one of the sides of the Triangle" << endl;
+}

@@ -1,5 +1,6 @@
 #pragma once
-#include "Point.h"
+#include "Vector.h"
+#include "EqualPointException.h"
 class Triangle : public Point
 {
 public:
@@ -11,6 +12,7 @@ public:
 	bool ifLess90();
 	bool ifGreater90();
 	double area();
+	double getPerimeter();
 	Point medicenter();
 	bool checkPlain(Point a);
 	unsigned char positioned(Point a);
