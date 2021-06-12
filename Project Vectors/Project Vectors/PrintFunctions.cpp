@@ -8,6 +8,12 @@ void PrintGeometricOperations()
 	cout << "4 - Segment" << endl;
 	cout << "5 - Triangle" << endl;
 }
+void PrintPointOperations()
+{
+	cout << "Please choose operation: " << endl;
+	cout << "1 - Get info about Point" << endl;
+	cout << "2 - Check if two Points match" << endl;
+}
 void PrintVectorOperations()
 {
 	cout << "Please choose operation: " << endl;
@@ -53,4 +59,11 @@ void PrintTriangleOperations()
 	cout << "5 - Find if a Point is in the Triangle" << endl;
 	cout << "6 - Find if a Point is outside of the Triangle but in the same ravnina" << endl;
 	cout << "7 - Find if a Point is positioned on one of the sides of the Triangle" << endl;
+}
+void PrintSegmentOperations()
+{
+	cout << "Please choose operation: " << endl;
+	cout << "1 - Get length of Segment " << endl;
+	cout << "2 - Get middle of Segment" << endl;
+	cout << "3 - Check if a Point is on the Segment" << endl;
 }

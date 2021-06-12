@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "PrintFunctions.h"
+#include "InputFunctions.h"
 #include "EqualPointException.h"
 #include "Triangle.h";
 #include "Line.h";
@@ -18,33 +19,49 @@ int main()
 		//Point
 		if (geometricObject == 1)
 		{
-
+			while (chooseOperation == 'y')
+			{
+				int operation;
+				Point p = EnterPointFunction();
+				PrintPointOperations();
+				cin >> operation;
+				if (operation == 1)
+				{
+					p.print();
+				}
+				else if (operation == 2)
+				{
+					Point p2 = EnterPointFunction();
+					if (p == p2)
+					{
+						cout << "The points match!" << endl;
+					}
+					else
+					{
+						cout << "The points DO NOT match!" << endl;
+					}
+				}
+				else
+				{
+					cout << "Please enter valid operation!" << endl;
+				}
+				cout << "Do you want to enter another operation (y/n)? " << endl;
+				cin >> chooseOperation;
+			}
 		}
 		//Vector
 		else if (geometricObject == 2)
 		{
 			while (chooseOperation == 'y')
 			{
-				cout << "Please enter first vector: " << endl;
-				double x;
-				double y;
-				double z;
-				int operation;
-				cout << "X: ";
-				cin >> x;
-
-				cout << "Y: ";
-				cin >> y;
-
-				cout << "Z: ";
-				cin >> z;
-				Vector v1(x, y, z);
+				Vector v1 = EnterVectorFunction();
 				PrintVectorOperations();
+				int operation;
 				cin >> operation;
 
 				if (operation == 1)
 				{
-					cout << v1.CalculateLenghtVector() << endl;
+					cout << "Vector length is: " << v1.CalculateLenghtVector() << endl;
 				}
 				else if (operation == 2)
 				{
@@ -64,16 +81,9 @@ int main()
 				}
 				else if (operation == 4)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
+					cout << "Second Vector" << endl;
 
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					Vector v2 = EnterVectorFunction();
 					if (v1.AreParallel(v2))
 					{
 						cout << "They are parallel" << endl;
@@ -85,16 +95,8 @@ int main()
 				}
 				else if (operation == 5)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					if (v1.ArePerpendicular(v2))
 					{
 						cout << "They are perpendicullar" << endl;
@@ -106,32 +108,15 @@ int main()
 				}
 				else if (operation == 6)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Vector v3 = v1 + v2;
 
 					PrintNewVector(v3);
 				}
 				else if (operation == 7)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					Vector v2 = EnterVectorFunction();
 					Vector v3 = v1 - v2;
 
 					PrintNewVector(v3);
@@ -147,56 +132,24 @@ int main()
 				}
 				else if (operation == 9)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					double result = v1 * v2;
-					cout << "Result" << result << endl;
+					cout << "Result: " << result << endl;
 				}
 				else if (operation == 10)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Vector v3 = v1 ^ v2;
 					PrintNewVector(v3);
 				}
 				else if (operation == 11)
 				{
-					cout << "Please enter second vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
-					cout << "Please enter third vector: " << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v3(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
+					cout << "Third Vector" << endl;
+					Vector v3 = EnterVectorFunction();
 					Vector v4 = v1(v2, v3);
 					PrintNewVector(v4);
 				}
@@ -213,31 +166,9 @@ int main()
 		{
 			while (chooseOperation == 'y')
 			{
-				double x;
-				double y;
-				double z;
 				int operation;
-
-				cout << "Enter Point data for FIRST Line: " << endl;
-				cout << "X: ";
-				cin >> x;
-				cout << "Y: ";
-				cin >> y;
-				cout << "Z: ";
-				cin >> z;
-
-				Point p(x, y, z);
-
-				cout << "Enter Vector data for FIRST Line: " << endl;
-				cout << "X: ";
-				cin >> x;
-
-				cout << "Y: ";
-				cin >> y;
-
-				cout << "Z: ";
-				cin >> z;
-				Vector v(x, y, z);
+				Point p = EnterPointFunction();
+				Vector v = EnterVectorFunction();
 				Line l(p, v);
 
 				PrintLineOperations();
@@ -256,41 +187,18 @@ int main()
 				}
 				else if (operation == 3)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
+					cout << "Second Point" << endl;
+					Point p2 = EnterPointFunction();
 
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
-					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
 					Line l2(p2, v2);
 					cout << "Angle between these two lines is: " << l.getAngle(l2) << endl;
 				}
 				else if (operation == 4)
 				{
 					cout << "Please enter Point to check if it's on the Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					if (l + p2)
 					{
 						cout << "The Point is on the Line!" << endl;
@@ -302,58 +210,26 @@ int main()
 				}
 				else if (operation == 5)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					Line l2(p2, v2);
 					if (l || l2)
 					{
-						cout << "Lines ARE Parallel!";
+						cout << "Lines ARE Parallel!" << endl;
 					}
 					else
 					{
-						cout << "Lines are NOT Parallel!";
+						cout << "Lines are NOT Parallel!" << endl;
 					}
 				}
 				else if (operation == 6)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					Line l2(p2, v2);
 					if (l == l2)
 					{
@@ -366,26 +242,10 @@ int main()
 				}
 				else if (operation == 7)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					Line l2(p2, v2);
 					if (l && l2)
 					{
@@ -398,26 +258,10 @@ int main()
 				}
 				else if (operation == 8)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					Line l2(p2, v2);
 					if (l != l2)
 					{
@@ -430,26 +274,10 @@ int main()
 				}
 				else if (operation == 9)
 				{
-					cout << "Please enter Vector for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Vector v2(x, y, z);
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
-					cout << "X: ";
-					cin >> x;
-
-					cout << "Y: ";
-					cin >> y;
-
-					cout << "Z: ";
-					cin >> z;
-					Point p2(x, y, z);
+					Point p2 = EnterPointFunction();
 					Line l2(p2, v2);
 					if (l | l2)
 					{
@@ -471,47 +299,55 @@ int main()
 		//Segment
 		else if (geometricObject == 4)
 		{
-
+			while (chooseOperation == 'y')
+			{
+				int operation;
+				PrintSegmentOperations();
+				cin >> operation;
+				Segment s = EnterSegmentFunction();
+				if (operation == 1)
+				{
+					cout << "Segment length is: " << s.getLength() << endl;
+				}
+				else if (operation == 2)
+				{
+					Point middlePoint = s.getMidPoint();
+					cout << "Middle Point is: " << endl;
+					middlePoint.print();
+				}
+				else if (operation == 3)
+				{
+					cout << "Enter Point to check if it's on the Segment" << endl;
+					Point p = EnterPointFunction();
+					if (s == p)
+					{
+						cout << "The Point is on the Segment" << endl;
+					}
+					else
+					{
+						cout << "The Point is NOT on the Segment" << endl;
+					}
+				}
+				else
+				{
+					cout << "Invalid operation number!" << endl;
+				}
+				cout << "Do you want to enter another operation (y/n)? " << endl;
+				cin >> chooseOperation;
+			}
 		}
 		//Triangle
 		else if (geometricObject == 5)
 		{
 			while (chooseOperation == 'y')
 			{
-				int x;
-				int y;
-				int z;
 				int operation;
-
-				cout << "Enter first Point: " << endl;
-				cout << "X: ";
-				cin >> x;
-				cout << "Y: ";
-				cin >> y;
-				cout << "Z: ";
-				cin >> z;
-
-				Point p1(x, y, z);
-
-				cout << "Enter second Point: " << endl;
-				cout << "X: ";
-				cin >> x;
-				cout << "Y: ";
-				cin >> y;
-				cout << "Z: ";
-				cin >> z;
-
-				Point p2(x, y, z);
-
-				cout << "Enter third Point: " << endl;
-				cout << "X: ";
-				cin >> x;
-				cout << "Y: ";
-				cin >> y;
-				cout << "Z: ";
-				cin >> z;
-
-				Point p3(x, y, z);
+				cout << "First Point" << endl;
+				Point p1 = EnterPointFunction();
+				cout << "Second Point" << endl;
+				Point p2 = EnterPointFunction();
+				cout << "Third Point" << endl;
+				Point p3 = EnterPointFunction();
 				Triangle tr(p1, p2, p3);
 				PrintTriangleOperations();
 				cin >> operation;
@@ -573,7 +409,7 @@ int main()
 				}
 				else 
 				{
-					cout << "Invalid operation number!";
+					cout << "Please enter valid operation!" << endl;
 				}
 				cout << "Do you want to enter another operation (y/n)? " << endl;
 				cin >> chooseOperation;
@@ -581,7 +417,7 @@ int main()
 		}
 		else
 		{
-			cout << "Please enter valid number!";
+			cout << "Please enter valid geometric number!";
 		}
 		cout << "Do you want to enter another geometric object (y/n)? " << endl;
 		cin >> chooseObject;

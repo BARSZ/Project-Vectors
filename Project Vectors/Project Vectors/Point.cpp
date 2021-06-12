@@ -29,7 +29,7 @@ bool operator==(Point p1, Point p2)
 }
 void Point::print()
 {
-	std::cout << "Point: " << x << " " << y << " " << z << "\n";
+	std::cout << "Point: " << x << " " << y << " " << z << std::endl;
 }
 char compareDouble(double a, double b)
 {
