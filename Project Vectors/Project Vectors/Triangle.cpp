@@ -2,7 +2,7 @@
 #include <iostream>
 Triangle::Triangle(Point A, Point B, Point C)
 {
-	
+
 	if (A == B)
 	{
 		std::cout << "ERROR A = B: ";
@@ -186,27 +186,66 @@ unsigned char Triangle::positioned(Point a)
 	else
 		return 1;
 }
-
-bool operator < (Point a, Triangle t)
+Point Triangle::getA() const
 {
-	if (t.positioned(a) == 3)
-		return true;
-	else
-		return false;
+	return A;
+}
+Point Triangle::getB() const
+{
+	return B;
+}
+Point Triangle::getC() const
+{
+	return C;
 }
 
-bool operator > (Point a, Triangle t)
+bool operator < (Point p, Triangle t)
 {
-	if (t.positioned(a) == 1)
-		return true;
+	if (t.checkPlain(p) && !(t == p))
+	{
+		Triangle APB(t.getA(), p, t.getB());
+		Triangle BPC(t.getB(), p, t.getC());
+		Triangle APC(t.getA(), p, t.getC());
+		if (t.area() == APB.area() + BPC.area() + APC.area())
+		{
+			return true;
+		}
+	}
 	else
+	{
 		return false;
+	}
 }
 
-bool operator ==(Point a, Triangle t)
+bool operator > (Point p, Triangle t)
 {
-	if (t.positioned(a) == 2)
-		return true;
+	if (t.checkPlain(p) && !(t == p))
+	{
+		Triangle APB(t.getA(), p, t.getB());
+		Triangle BPC(t.getB(), p, t.getC());
+		Triangle APC(t.getA(), p, t.getC());
+		if (t.area() != APB.area() + BPC.area() + APC.area())
+		{
+			return true;
+		}
+	}
 	else
+	{
 		return false;
+	}
+}
+
+bool operator ==(Point p, Triangle t)
+{
+	Segment a(t.getB(), t.getC());
+	Segment b(t.getA(), t.getC());
+	Segment c(t.getA(), t.getB());
+	if (a == p || b == p || c == p)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

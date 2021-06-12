@@ -397,15 +397,39 @@ int main()
 				}
 				else if (operation == 5)
 				{
-					
+					Point p4 = EnterPointFunction();
+					if ((p4 < tr))
+					{
+						cout << "Point is inside of the Triangle and in the same Plane" << endl;
+					}
+					else
+					{
+						cout << "Point is NOT inside of the Triangle and in the same Plane" << endl;
+					}
 				}
 				else if (operation == 6)
 				{
-
+					Point p4 = EnterPointFunction();
+					if ((p4 > tr))
+					{
+						cout << "Point is outside of the Triangle but in the same Plane" << endl;
+					}
+					else
+					{
+						cout << "Point is NOT inside of the Triangle and NOT in the same Plane" << endl;
+					}
 				}
 				else if (operation == 7)
 				{
-
+					Point p4 = EnterPointFunction();
+					if ((p4 == tr))
+					{
+						cout << "Point is positioned on one of the sides of the Triangle" << endl;
+					}
+					else
+					{
+						cout << "Point is NOT positioned on one of the sides of the Triangle" << endl;
+					}
 				}
 				else 
 				{

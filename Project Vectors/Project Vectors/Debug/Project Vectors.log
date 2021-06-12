@@ -1,8 +1,20 @@
-﻿  Project Vectors.cpp
+﻿  InputFunctions.cpp
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  PrintFunctions.cpp
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Project Vectors.cpp
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\InputFunctions.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Project Vectors.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Project Vectors.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Triangle.cpp
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Vector.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Triangle.cpp(218): warning C4715: 'operator<': not all control paths return a value
+C:\Assignments\OOP\Project-Vectors\Project Vectors\Project Vectors\Triangle.cpp(236): warning C4715: 'operator>': not all control paths return a value
   Project Vectors.vcxproj -> C:\Assignments\OOP\Project-Vectors\Project Vectors\Debug\Project Vectors.exe

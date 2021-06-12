@@ -1,5 +1,6 @@
 #pragma once
 #include "Vector.h"
+#include "Segment.h"
 #include "EqualPointException.h"
 class Triangle : public Point
 {
@@ -16,6 +17,10 @@ public:
 	Point medicenter();
 	bool checkPlain(Point a);
 	unsigned char positioned(Point a);
+	Point getA() const;
+	Point getB() const;
+	Point getC() const;
+
 
 private:
 	Point A, B, C;
