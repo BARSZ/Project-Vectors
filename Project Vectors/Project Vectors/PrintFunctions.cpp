@@ -26,8 +26,8 @@ void PrintVectorOperations()
 	cout << "7 - Substract two vectors" << endl;
 	cout << "8 - Multiply a vector by a number" << endl;
 	cout << "9 - Multiply a vector by a vector" << endl;
-	cout << "10 - Vektorno proizvedenie" << endl;
-	cout << "11 - Multiply three vectors" << endl;
+	cout << "10 - Vector multiplication with 2 vectors" << endl;
+	cout << "11 - Vector multiplication with 3 vectors" << endl;
 }
 void PrintLineOperations()
 {
@@ -38,8 +38,8 @@ void PrintLineOperations()
 	cout << "4 - Is Point on Line?" << endl;
 	cout << "5 - Is this Line parrallel to another Line?" << endl;
 	cout << "6 - Two lines match?" << endl;
-	cout << "7 - Is this Line going through another Line?" << endl;
-	cout << "8 - Dali edna prava e krustosana s druga prava?" << endl;
+	cout << "7 - Do two lines intercept?" << endl;
+	cout << "8 - Are two lines skew?" << endl;
 	cout << "9 - Is this Line perpendicular to another Line?" << endl;
 }
 void PrintNewVector(Vector v2)

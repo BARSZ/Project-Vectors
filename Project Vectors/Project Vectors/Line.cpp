@@ -5,16 +5,16 @@ Line::Line()
 }
 Line::Line(const Point& point, const Vector& vector)
 {
-	x = point.getX() + slope.getX() * t;
-	y = point.getY() + slope.getY() * t;
-	z = point.getZ() + slope.getZ() * t;
+	x = point.getX() + slope.getX();
+	y = point.getY() + slope.getY();
+	z = point.getZ() + slope.getZ();
 	slope = vector;
 }
 Line::Line(const Point& a, const Point& b)
 {
-	x = a.getX() + slope.getX() * t;
-	y = a.getY() + slope.getY() * t;
-	z = a.getZ() + slope.getZ() * t;
+	x = a.getX() + slope.getX();
+	y = a.getY() + slope.getY();
+	z = a.getZ() + slope.getZ();
 	slope = Vector(a, b);
 }
 
@@ -28,17 +28,7 @@ Line& Line::operator=(const Line& rhs)
 	y = rhs.y;
 	z = rhs.z;
 	slope = rhs.slope;
-	t = rhs.t;
 	return *this;
-}
-double Line::getT() const
-{
-	return t;
-}
-double Line::setT(double tToBe)
-{
-	t = tToBe;
-	return t;
 }
 Vector Line::getSlope() const
 {
@@ -46,11 +36,31 @@ Vector Line::getSlope() const
 }
 Vector Line::getNormVect() const
 {
-	double Nx = 1;
-	double Ny = 1;
-	double Nz = (-this->getSlope().getX() - this->getSlope().getY()) / this->getSlope().getZ();
-	Vector normVect(Nx, Ny, Nz);
-	return normVect;
+	if (getSlope().getZ() != 0)
+	{
+		double Nx = 1;
+		double Ny = 1;
+		double Nz = (-this->getSlope().getX() - this->getSlope().getY()) / this->getSlope().getZ();
+		Vector normVect(Nx, Ny, Nz);
+		return normVect;
+	}
+	else if (getSlope().getY() != 0)
+	{
+		double Nx = 1;
+		double Ny = (-this->getSlope().getX() - this->getSlope().getZ()) / this->getSlope().getY();
+		double Nz = 1;
+		Vector normVect(Nx, Ny, Nz);
+		return normVect;
+	}
+	else if (getSlope().getX() != 0)
+	{
+		double Nx = (-this->getSlope().getY() - this->getSlope().getZ()) / this->getSlope().getX();
+		double Ny = 1;
+		double Nz = 1;
+		Vector normVect(Nx, Ny, Nz);
+		return normVect;
+	}
+
 }
 double Line::getAngle(const Line& rhs) const
 {
@@ -63,12 +73,12 @@ double Line::getAngle(const Line& rhs) const
 bool Line::operator+ (const Point& p)
 {
 	bool flag = false;
-	setT((this->getX() - p.getX()) / slope.getX());
-	if (this->getT() == ((this->getY() - p.getY()) / slope.getY()) && this->getT() == ((this->getZ() - p.getZ()) / slope.getZ()))
+	Point p1(this->getX(), this->getY(), this->getZ());
+	Vector rhsLine(p1, p);
+	if ((this->getSlope() ^ rhsLine) == 0)
 	{
 		flag = true;
 	}
-	setT(1);
 	return flag;
 }
 bool Line::operator|| (Line& rhs) const
@@ -84,7 +94,7 @@ bool Line::operator== (Line& rhs) const
 {
 	bool flag = false;
 	Point p1(this->getX(), this->getY(), this->getZ());
-	if (rhs.operator+(p1))
+	if (this->operator||(rhs) && rhs.operator+(p1))
 	{
 		flag = true;
 	}

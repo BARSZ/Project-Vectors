@@ -4,8 +4,8 @@ Segment::Segment(const Point& start, const Point& end)
 	Line line(s, e);
 	s = start;
 	e = end;
-	beg = (s.getX() - ((line.getX() - line.getSlope().getX() * line.getT())) / line.getSlope().getX());
-	fin = (e.getX() - ((line.getX() - line.getSlope().getX() * line.getT())) / line.getSlope().getX());
+	beg = (s.getX() - (line.getX() - line.getSlope().getX() / line.getSlope().getX()));
+	fin = (e.getX() - (line.getX() - line.getSlope().getX() / line.getSlope().getX()));
 }
 Segment::~Segment()
 {
@@ -38,10 +38,14 @@ Point Segment::getMidPoint() const
 bool Segment::operator== (const Point& rhs) const
 {
 	bool flag = false;
-	Line line(this->getS(), this->getE());
+	if (rhs == this->getS())
+	{
+		flag = true;
+		return flag;
+	}
 	Vector segmVect(this->getS(), this->getE());
 	Vector rhsVect(this->getS(), rhs);
-	if (line.operator+(rhs) && this->getLength() >= rhsVect.CalculateLenghtVector() && segmVect.AreParallel(rhsVect))
+	if ((this->getLength() >= rhsVect.CalculateLenghtVector() && segmVect.CalculateDirection() == rhsVect.CalculateDirection()))
 	{
 		flag = true;
 	}

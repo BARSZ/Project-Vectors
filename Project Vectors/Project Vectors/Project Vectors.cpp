@@ -210,10 +210,10 @@ int main()
 				}
 				else if (operation == 5)
 				{
-					cout << "Second Vector" << endl;
-					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
 					Point p2 = EnterPointFunction();
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Line l2(p2, v2);
 					if (l || l2)
 					{
@@ -226,66 +226,66 @@ int main()
 				}
 				else if (operation == 6)
 				{
-					cout << "Second Vector" << endl;
-					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
 					Point p2 = EnterPointFunction();
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Line l2(p2, v2);
 					if (l == l2)
 					{
-						cout << "Lines match!" << endl;
+						cout << "Lines coincide!" << endl;
 					}
 					else
 					{
-						cout << "Lines do not match" << endl;
+						cout << "Lines do not coincide!" << endl;
 					}
 				}
 				else if (operation == 7)
 				{
-					cout << "Second Vector" << endl;
-					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
 					Point p2 = EnterPointFunction();
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Line l2(p2, v2);
 					if (l && l2)
 					{
-						cout << "Pravite se presichat!" << endl;
+						cout << "The lines intercept!" << endl;
 					}
 					else
 					{
-						cout << "Pravite ne se presichat!" << endl;
+						cout << "The lines DON'T intercept!" << endl;
 					}
 				}
 				else if (operation == 8)
 				{
-					cout << "Second Vector" << endl;
-					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
 					Point p2 = EnterPointFunction();
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Line l2(p2, v2);
 					if (l != l2)
 					{
-						cout << "Dvete pravi se krustosvat!" << endl;
+						cout << "The lines ARE skew!" << endl;
 					}
 					else
 					{
-						cout << "Dvetet pravi ne se krustosvat!" << endl;
+						cout << "The lines AREN'T skew!" << endl;
 					}
 				}
 				else if (operation == 9)
 				{
-					cout << "Second Vector" << endl;
-					Vector v2 = EnterVectorFunction();
 					cout << "Please enter Point for second Line" << endl;
 					Point p2 = EnterPointFunction();
+					cout << "Second Vector" << endl;
+					Vector v2 = EnterVectorFunction();
 					Line l2(p2, v2);
 					if (l | l2)
 					{
-						cout << "Lines are perpendicullar!" << endl;
+						cout << "Lines ARE perpendicullar!" << endl;
 					}
 					else
 					{
-						cout << "Lines are NOT perpendicullar!" << endl;
+						cout << "Lines AREN'T perpendicullar!" << endl;
 					}
 				}
 				else
@@ -431,7 +431,7 @@ int main()
 						cout << "Point is NOT positioned on one of the sides of the Triangle" << endl;
 					}
 				}
-				else 
+				else
 				{
 					cout << "Please enter valid operation!" << endl;
 				}

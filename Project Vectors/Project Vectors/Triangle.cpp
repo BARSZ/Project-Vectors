@@ -201,51 +201,39 @@ Point Triangle::getC() const
 
 bool operator < (Point p, Triangle t)
 {
-	if (t.checkPlain(p) && !(t == p))
+	bool flag = false;
+	if (t.checkPlain(p) && !(p == t))
 	{
 		Triangle APB(t.getA(), p, t.getB());
 		Triangle BPC(t.getB(), p, t.getC());
 		Triangle APC(t.getA(), p, t.getC());
 		if (t.area() == APB.area() + BPC.area() + APC.area())
 		{
-			return true;
+			flag = true;
 		}
 	}
-	else
-	{
-		return false;
-	}
+	return flag;
 }
 
 bool operator > (Point p, Triangle t)
 {
-	if (t.checkPlain(p) && !(t == p))
+	bool flag = false;
+	if (t.checkPlain(p) && !(p == t) && !(p < t))
 	{
-		Triangle APB(t.getA(), p, t.getB());
-		Triangle BPC(t.getB(), p, t.getC());
-		Triangle APC(t.getA(), p, t.getC());
-		if (t.area() != APB.area() + BPC.area() + APC.area())
-		{
-			return true;
-		}
+		flag = true;
 	}
-	else
-	{
-		return false;
-	}
+	return flag;
 }
 
 bool operator ==(Point p, Triangle t)
 {
+	bool flag = false;
 	Segment a(t.getB(), t.getC());
 	Segment b(t.getA(), t.getC());
 	Segment c(t.getA(), t.getB());
 	if (a == p || b == p || c == p)
 	{
-		return true;
+		flag = true;
 	}
-	else
-	{
-		return false;
-	}
+	return flag;
 }
